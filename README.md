@@ -1,31 +1,20 @@
-# Plateforme d'analyse de transactions end-to-end traitant 284K+ transactions de cartes de crédit avec détection d'anomalies, frameworks de qualité des données et dashboards Power BI temps réel. Construite sur Azure Databricks avec Delta Lake.
+# Pipeline ML end-to-end pour la détection de fraude avec pratiques MLOps complètes. Inclut feature engineering avancé, gestion de données déséquilibrées, tracking MLflow et gouvernance Unity Catalog.
 
+## Système de Détection de Fraude avec Pipeline MLOps
 
-## Plateforme d'Analyse de Transactions & Détection d'Anomalies
-Une solution d'ingénierie de données scalable pour l'analyse de transactions financières avec détection automatisée d'anomalies et monitoring de la qualité des données.
-
-## Pipeline ETL
-### Phase 1 : Ingestion (Bronze Layer)
-Objectif : Charger les données brutes dans Delta Lake avec métadonnées
-
-### Phase 2 : Transformation (Silver Layer)
-Objectif : Nettoyer, valider et enrichir les données
-
-### Phase 3 : Analytics (Gold Layer)
-Objectif : Créer des tables agrégées pour analyses métier
+Un pipeline de machine learning production-ready pour la détection de fraude sur cartes de crédit, gérant des datasets hautement déséquilibrés (0,17% de fraude) avec MLOps et gouvernance complètes.
 
 ## 🎯 Fonctionnalités Clés
-- **Pipeline Médaillon** : Architecture Bronze-Silver-Gold avec merges incrémentaux Delta Lake
-- **Framework de Qualité des Données** : Tests de validation automatisés (nullité, plages, intégrité référentielle)
-- **Optimisé pour la Performance** : Réduction de 35% du temps de traitement (45min → 29min) via optimisation Spark
-- **Détection d'Anomalies** : Méthodes basées sur des règles métier et statistiques pour identifier les transactions suspectes
+- **Feature Engineering Avancé** : 30+ features créées avec window functions PySpark
+- **Gestion des Données Déséquilibrées** : SMOTE, pondération de classes et stratégies d'échantillonnage stratifié
+- **MLOps avec MLflow** : Tracking d'expériences, optimisation d'hyperparamètres (Hyperopt), registre de modèles
+- **Gouvernance Unity Catalog** : Traçabilité complète des données brutes aux prédictions du modèle
+- **Monitoring en Production** : Détection de data drift, suivi de performance, retraining automatisé
 
 ## 🛠️ Stack Technique
-Azure Databricks • Delta Lake • PySpark • Spark SQL • Azure Data Lake Gen2
+Databricks ML Runtime • PySpark • MLflow • Delta Lake • Unity Catalog • XGBoost • SHAP
 
 ## 📊 Résultats
-- Traitement de 284K transactions en 29 minutes
-- Identification de 450+ transactions anomales (0,16%)
-
-## Amélioration
-- **Dashboards Interactifs** : Power BI / RShiny pour monitoring en temps réel
+- **Performance du Modèle** : 96% précision, 85% rappel, 0,97 AUC-ROC
+- **Scalabilité** : Scoring de 100K transactions en 5 minutes
+- **Impact** : Réduction de 80% de la fraude détectable
